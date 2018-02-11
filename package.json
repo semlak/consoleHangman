@@ -1,0 +1,37 @@
+{
+  "name": "consolehangman",
+  "version": "1.0.0",
+  "description": "A console-based hangman game running in node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semlak/consoleHangman.git"
+  },
+  "keywords": [
+    "game",
+    "hangman",
+    "console",
+    "node",
+    "javascript"
+  ],
+  "author": "Joseph Semlak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/semlak/consoleHangman/issues"
+  },
+  "homepage": "https://github.com/semlak/consoleHangman#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "clear": "0.0.1",
+    "clui": "^0.3.6",
+    "configstore": "^3.1.1",
+    "figlet": "^1.2.0",
+    "inquirer": "^5.1.0",
+    "inquirer-longer": "^0.5.0",
+    "keypress": "^0.2.1",
+    "minimist": "^1.2.0"
+  }
+}
