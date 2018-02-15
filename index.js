@@ -7,6 +7,7 @@ const clui = require('clui')
 const chalkline = require('chalkline')
 const keypress = require('keypress');
 const boxen = require("boxen")
+const wrapAnsi = require('wrap-ansi');
 
 // require("coffee-script");
 require("coffee-script/register");
@@ -39,6 +40,7 @@ let app = null;
 
 
 let showGame = function() {
+
 	drawBanner()
 	let winsBoxText = chalk.cyan("Player Name: ") + chalk.red.bold(app.playerName) +
 		chalk.cyan("  Wins: ") + chalk.red.bold(app.wins) +
@@ -48,6 +50,14 @@ let showGame = function() {
 	console.log("\n");
 	console.log(winsBox);
 	console.log("\n");
+
+	if (app.game.showHint) {
+		let hintText = chalk.red(app.game.hint)
+		console.log(boxen(wrapAnsi(hintText, 70), {padding: 1, borderStyle: "round"}))
+		console.log("\n");
+	}
+
+
 	let boxes = new Boxes(app.game.word.toString());
 	console.log(boxes.go().toString());
 
@@ -58,9 +68,13 @@ let showGame = function() {
 	console.log(chalk.green(userGuesses));
 	console.log(chalk.red("Guesses left: " + app.game.guessesLeft))
 	console.log("\n");
+
 	console.log('Guess a letter: ');
 
+
+
 }
+
 
 
 let keypressGame = function() {
@@ -93,12 +107,19 @@ let keypressGame = function() {
 		// }
 
 		console.log("in onKeypress event", key)
-		if (key && key.ctrl && key.name == 'c') {
-			console.log("Caught a Ctrl+C. Exiting")
+		if (key && key.name === "escape" || (key.ctrl && (key.name === 'c' || key.name === "q"))) {
+			// console.log("Caught a Ctrl+C. Exiting")
 			process.stdin.pause();
 			// process.stdin.on('keypress', null);
 			// process.stdin.off();
 			// keypressGame();
+		}
+		else if ((key && key.ctrl && key.name === "h") || (key.sequence === "\b" && key.name === "backspace")) {
+			// console.log("showing hint")
+			// show hint
+			app.game.showHint = true;
+			app.game.currentHint++;
+			showGame();
 		}
 		else if (key && (/[A-Za-z]/i).test(key.name) && key.name.length === 1) {
 			console.log ("in else if")
@@ -126,8 +147,9 @@ let keypressGame = function() {
 			else {
 				console.log("in else if -> else")
 				process.stdin.resume();
+				console.log(process.stdin);
 				// showGame();
-				showGame();
+				// showGame();
 			}
 		}
 		else {
@@ -219,7 +241,6 @@ let main = function() {
 
 
 main();
-
 
 // console.log(boxen('unicorn', {padding: 1, borderStyle: "round", float: "left"}))
 // console.log(boxen('unicorn', {padding: 1, margin: 10, borderStyle: "round", float: "left"}))

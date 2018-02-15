@@ -37,6 +37,7 @@
     "inquirer-longer": "^0.5.0",
     "keypress": "^0.2.1",
     "lines-js": "0.0.6",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "wrap-ansi": "^3.0.1"
   }
 }

@@ -47,7 +47,7 @@ class Boxes
 		left = 0
 		top = 0
 		bottom = 10
-		right = 80
+		right = 60
 		# right = @literals[@literals.length - 1].position[0] + 6
 		# console.log (right)
 		factorial
