@@ -1,49 +1,23 @@
 lines = require ('lines-js')
-chalk = require ('chalk')
 
+# adapted from one of the examples provided in the lines.js package,
+# specifically https://github.com/couchand/lines-js/blob/master/example/funciton.coffee
 class Boxes
 	constructor: (@word) ->
 		# @word = word
 		# console.log "Hey Boxes"
-		@functions = [
-			# { name: "+", position: [ 7,  6] }
-			# { name: "!", position: [ 7,  9] }
-			# { name: "×", position: [13, 12] }
-			# { name: "?", position: [19, 12] }
-			# { name: ">", position: [24,  2] }
-		]
-
-		# @literals = [
-		# 	# { name: "-1", position: [ 0, 6] }
-		# 	{ name:  "1", position: [19, 9] }
-		# 	{ name:  "2", position: [30, 2] }
-		# 	{ name:  "5", position: [40, 1] }
-		# 	{ name:  "9", position: [45, 1] }
-		# ]
-
 		@literals = @word
 			.split ""
-			# .filter (val) ->
-				# console.log (val.match /[A-Za-z]/)
-				# /[A-Za-z]/.test(val)
 			.map (val, i) -> {name: val, position: [2+ i * 6, 2]}
 			.filter (obj) -> /[A-Za-z_]/.test(obj.name)
 
-		@declarations = [
-			# { name: "!", position: [17, 0] }
-		]
-
 
 	go: () ->
-		# console.log "word: ", @word
-		# console.log @literals
-		all = @functions.concat @literals, @declarations
+		all = @literals
 
 		factorial = lines()
 
-		functionCall factorial, name, position for {name, position} in @functions
 		integerLiteral factorial, name, position for {name, position} in @literals
-		functionDeclare factorial, name, position for {name, position} in @declarations
 		left = 0
 		top = 0
 		height = 6
