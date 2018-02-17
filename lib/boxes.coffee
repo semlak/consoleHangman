@@ -46,33 +46,13 @@ class Boxes
 		functionDeclare factorial, name, position for {name, position} in @declarations
 		left = 0
 		top = 0
-		# bottom = 6
 		height = 6
-		# right = 60
 		width = 60
-		# right = @literals[@literals.length - 1].position[0] + 6
-		# console.log (right)
 		factorial
 			.line [0, 0], 			[left + width, 0], "rounded"
 			.line [0, 0], 			[0, top + height], "rounded"
 			.line [left + width, 0], [left + width, top + height], "rounded"
 			.line [0, top + height], [left + width, top + height], "rounded"
-			# .line [ 5,  7], [ 7,  7]
-			# .line [ 9,  8], [ 9,  9]
-			# .line [ 9, 11], [ 9, 15]
-			# .line [ 9, 15], [15, 15]
-			# .line [15, 15], [15, 14]
-			# .line [11,  7], [15,  7]
-			# .line [15,  7], [15, 12]
-			# .line [17, 13], [19, 13]
-			# .line [21, 11], [21, 12]
-			# .line [21, 14], [21, 16]
-			# .line [23, 13], [26, 13]
-			# .line [26, 13], [26,  4]
-			# .line [28,  3], [30,  3]
-			# .line [24,  3], [13,  3]
-			# .line [13,  3], [13,  7]
-			# .line [19,  2], [19,  3]
 
 		rendered = factorial.toString()
 		rendered = addName rendered, name, position for {name, position} in all
