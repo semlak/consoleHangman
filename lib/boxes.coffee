@@ -26,7 +26,7 @@ class Boxes
 			# .filter (val) ->
 				# console.log (val.match /[A-Za-z]/)
 				# /[A-Za-z]/.test(val)
-			.map (val, i) -> {name: val, position: [2+ i * 6, 3]}
+			.map (val, i) -> {name: val, position: [2+ i * 6, 2]}
 			.filter (obj) -> /[A-Za-z_]/.test(obj.name)
 
 		@declarations = [
@@ -46,15 +46,17 @@ class Boxes
 		functionDeclare factorial, name, position for {name, position} in @declarations
 		left = 0
 		top = 0
-		bottom = 10
-		right = 60
+		# bottom = 6
+		height = 6
+		# right = 60
+		width = 60
 		# right = @literals[@literals.length - 1].position[0] + 6
 		# console.log (right)
 		factorial
-			.line [0, 0], 		[right, 0], "rounded"
-			.line [0, 0], 		[0, bottom], "rounded"
-			.line [right, 0], 	[right, bottom], "rounded"
-			.line [0, bottom], 	[right, bottom], "rounded"
+			.line [0, 0], 			[left + width, 0], "rounded"
+			.line [0, 0], 			[0, top + height], "rounded"
+			.line [left + width, 0], [left + width, top + height], "rounded"
+			.line [0, top + height], [left + width, top + height], "rounded"
 			# .line [ 5,  7], [ 7,  7]
 			# .line [ 9,  8], [ 9,  9]
 			# .line [ 9, 11], [ 9, 15]
