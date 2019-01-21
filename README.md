@@ -1,4 +1,6 @@
 # consoleHangman
+## A hangman game for the Node.js console terminal
+![Welcome Screen](https://i.postimg.cc/hjvNJZJY/hangman-full.gif)
 
 This is a basic Node console application for the game [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)), created as an assignment for a educational program I was completing. It is not a web application; it only runs in a terrminal and accepts keyboard input. To run it (instructions below), you need to clone/download the repository to your machine, with node installed, and run.
 
@@ -46,13 +48,14 @@ git clone https://github.com/semlak/consoleHangman
 git clone git@github.com:semlak/consoleHangman.git
 cd consoleHangman
 npm install
-node index.js
+npm start
 ```
 
 ### Playing the game
 After installing using the above game, and running the `node index.js` command:
 - The game displays a splash and prompts for you to enter your name.
 - It then asks if you want to play a game. If you answer no, it exits.
+![Start Screen](./screenshots/hangman-start.gif)
 
 Assuming you choose to play the game:
 - A box is rendered with smaller boxes inside, where each smaller box contains an underscore ('\_'). Those stand for letters you need to guess.
@@ -60,3 +63,11 @@ Assuming you choose to play the game:
 - The game should update all letters guessed, the correct letters filled into the boxes, and how many wrong guesses you have left.
 - For a hint, type 'Ctrl+H'
 - To exit, type 'Ctrl+C' or the escape key ('Esc')
+
+##### Wrong Guesses:
+![Wrong Guessing](./screenshots/hangman-wrong-guesses.gif)
+
+##### Using the Hint options (press Ctrl + H to view first hint and then cycle through hints):
+![Hints](./screenshots/hangman-hints.gif)
+##### Try to guess the letters in the word (in this case, "Silmaril":
+![Correct Guessing](./screenshots/hangman-correct-guesses.gif)
