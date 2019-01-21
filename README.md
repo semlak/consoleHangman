@@ -55,7 +55,7 @@ npm start
 After installing using the above game, and running the `node index.js` command:
 - The game displays a splash and prompts for you to enter your name.
 - It then asks if you want to play a game. If you answer no, it exits.
-![Start Screen](./screenshots/hangman-start.gif)
+![Start Screen](https://i.postimg.cc/5tnZ2Wtv/hangman-start.gif)
 
 Assuming you choose to play the game:
 - A box is rendered with smaller boxes inside, where each smaller box contains an underscore ('\_'). Those stand for letters you need to guess.
@@ -65,9 +65,9 @@ Assuming you choose to play the game:
 - To exit, type 'Ctrl+C' or the escape key ('Esc')
 
 ##### Wrong Guesses:
-![Wrong Guessing](./screenshots/hangman-wrong-guesses.gif)
+![Wrong Guessing](https://i.postimg.cc/R0MkmZv4/hangman-wrong-guesses.gif)
 
 ##### Using the Hint options (press Ctrl + H to view first hint and then cycle through hints):
-![Hints](./screenshots/hangman-hints.gif)
+![Hints](https://i.postimg.cc/x1SrsP7k/hangman-hints.gif)
 ##### Try to guess the letters in the word (in this case, "Silmaril":
-![Correct Guessing](./screenshots/hangman-correct-guesses.gif)
+![Correct Guessing](https://i.postimg.cc/Qdg2vTGf/hangman-correct-guesses.gif)
