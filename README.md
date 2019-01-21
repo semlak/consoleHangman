@@ -2,7 +2,7 @@
 ## A hangman game for the Node.js console terminal
 ![Welcome Screen](https://i.postimg.cc/hjvNJZJY/hangman-full.gif)
 
-This is a basic Node console application for the game [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)), created as an assignment for a educational program I was completing. It is not a web application; it only runs in a terrminal and accepts keyboard input. To run it (instructions below), you need to clone/download the repository to your machine, with node installed, and run.
+This is a basic Node console application for the game [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)), created as an assignment for an educational program I was completing. It is not a web application; it only runs in a terrminal and accepts keyboard input. To run it (instructions below), you need to clone/download the repository to your machine, with node installed, and run.
 
 
 All of the Hangman words are from from [Tolkien's Legendarium](https://en.wikipedia.org/wiki/Tolkien%27s_legendarium), (Lord of the Rings/Silmarillion)
@@ -21,7 +21,7 @@ Various modules
 - [Inquirer](https://www.npmjs.com/package/inquirer) for user Input
 - [keypress](https://www.npmjs.com/package/keypress) also for user Input
 - [chalk](https://www.npmjs.com/package/chalk) to add color to console UI
-- [figlet](https://www.npmjs.com/package/figlet) to make a application banner/splash
+- [figlet](https://www.npmjs.com/package/figlet) to make an application banner/splash
 - [boxen](https://www.npmjs.com/package/boxen) for some of the box rendering
 - [lines-js](https://www.npmjs.com/package/lines-js) for more  of the box rendering
 - [coffee-script](https://www.npmjs.com/package/coffee-script) I'm not a coffee-script person, but I created a boxes module that uses lines-js, and most of their examples used coffeescript. It was easier to adapt the code keeping it in coffeescript rather than convert to JavaScript.
